@@ -25,7 +25,7 @@ For example, we can answer questions such as how the risk of a malicious borrowe
 ### Copula model ###
 - quantitative method for assesing credit risk
 - use of a factor model based on joint multi-variate normal distribution properties
-- Appropriate modelling of dependencies between model input variables is a very significant issue in risk models in a number of application areas. For example, an inappropriate  assumption of gaussian dependencies between the risk of various financial instruments was one of the factors that led to the global financial crisis of 2008.
+
 ### Knowledge graph-based model ###
 * Text to entity engine (using Transformer or Bidirectional LSTM architecture)
 * Relationship modelling
