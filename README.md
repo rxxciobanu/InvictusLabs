@@ -14,8 +14,7 @@ For example, we can answer questions such as how the risk of a malicious borrowe
 * Knowledge graph-based model
 
 ## Architecture ##
-![GitHub logo](https://github.com/logos/open-source/blob/main/Octocat/Octocat.png)
-
+![image-description](assets/Invictus_Labs_overview_arch_1.png)
 
 
 
