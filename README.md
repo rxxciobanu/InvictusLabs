@@ -19,7 +19,7 @@ For example, we can answer questions such as how the risk of a malicious borrowe
 * Stand-alone model
 * Graph-based model
 
-## Architecture ##
+## Architecture (need to redo it) ##
 ![image-description](assets/Invictus_Labs_overview_arch_1.png)
 
 
@@ -77,13 +77,9 @@ The **Overall risk score** of a borrower is a weighted average between *Individu
 
 
 ## Allocation Engine ##
+The **Allocation Engine** constructs a diversified "portfolio" of borrowers allocated to specific pools such that the overall lending pool risk is minimized and also exists required liquidity. 
 
 
-
-* Text to entity engine (using Transformer or Bidirectional LSTM architecture)
-* Relationship modelling
-* Quantify the impact of the relationship between entities
-* Risk assesment engine
 
 
 
