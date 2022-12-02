@@ -26,10 +26,13 @@ For example, we can answer questions such as how the risk of a malicious borrowe
 
 ### Data ###
 
-What kind of data we use and how are we going to structure it? 
+What kind of data we use and how do we structure it?
+
+
+
 - **On-chain data** module: use (wallet) transaction data on DeXes, metrics from wallet addresses
 - **Off-chain data** module: use balance sheets, margin/leverage history, equity/liquidity,  business registration details, historical business data, payment history and collections, public fillings, etc.
-- **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities.
+- **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a text-to-entity approach, by applying a bi-directional LSTM model for capturing entities and relationships from unstructured text data.
 
 ### Expert-driven model ###
 
@@ -39,16 +42,23 @@ What kind of data we use and how are we going to structure it?
 - use of a factor model based on joint multi-variate normal distribution properties
 
 ### Graph-based model ###
-In light of crypto recent events, borrower activities both depend upon and have consequences on the DeFi/Web3 ecosystem. Bayesian networks are able to synthesize different kinds of knowledge and explicitly account for the probabilities of different scenarios, therefore offering a very useful tool for risk assesment. 
+In light of crypto recent events, borrower activities both depend upon and have consequences on the DeFi/Web3 ecosystem. *Bayesian networks* are able to synthesize different kinds of knowledge and explicitly account for the probabilities of different scenarios, therefore offering a very useful tool for risk assesment. 
 
-Bayesian networks (causal inference models) are a type of probabilistic graphical model that explicitly describe
+*Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
+distribution of the node conditional on its parents. Based on this, we will construct a *overall risk score* which is composed of the data offered by the borrower/ any externally accesibile data sources, along with its relation with other borrowers. I.e.,
 
-distribution of the node conditional on its parents.
 
-In order to build the model, we will need a **Data Aggregator Engine** which combines the **On-Chain Data**
 
+In order to build the model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
+
+For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by using a bidirectional LSTM to identify entities and relationships. 
+
+
+### Risk assesment methodology ###
+
+Systemic risk impact 
 
 
 
