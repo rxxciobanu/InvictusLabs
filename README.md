@@ -16,8 +16,8 @@ In order to mitigate risk, there exist two well known techniques:
 For example, we can answer questions such as how the risk of a malicious borrower could ‘’intoxicate’’ others, via ripple effects.
 ## Methods ##
 * Copula model
-* Stand-alone model
-* Graph-based model
+* Stand-alone model (also known as Borrower model)
+* Graph-based model (also known as Borrower-to-Borrower model)
 
 ## Architecture (need to redo it) ##
 ![image-description](assets/Invictus_Labs_overview_arch_1.png)
@@ -43,11 +43,11 @@ A copula model is a type of mathematical model that is used to describe the depe
 
 The model consists of two components: a *marginal* model, which describes the distribution of the individual sources of risk, and a *copula* function, which describes the dependence between those sources of risk. The marginal model can be specified using a variety of different parametric forms, such as the logistic or normal distributions, while the copula function can be specified using a variety of different parametric forms, such as the Gaussian or Clayton copulas. 
 
-### Stand-alone model ###
+### Borrower model ###
 A stand-alone model is a neural network model trained on the data structured in the **Data Aggregator Engine**, outputting the credit risk of default for a borrower, without taking into account any other systemic risk created by other players in the field. This is used to calculate the **Individual credit risk** (see below). 
 
 
-### Graph-based model ###
+### Borrower-to-Borrower model ###
 In light of crypto recent events, borrower activities both depend upon and have consequences on the DeFi/Web3 ecosystem. *Bayesian networks* are able to synthesize different kinds of knowledge and explicitly account for the probabilities of different scenarios, therefore offering a very useful tool for risk assesment. 
 
 *Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
