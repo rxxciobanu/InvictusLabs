@@ -48,7 +48,7 @@ In light of crypto recent events, borrower activities both depend upon and have 
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
 distribution of the node conditional on its parents. Based on this, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the Bayesian network inference model based on its relation with other borrowers (**Systemic Risk**).
-
+cdcx
 
 
 In order to build the model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
