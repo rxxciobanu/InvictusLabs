@@ -47,7 +47,7 @@ In light of crypto recent events, borrower activities both depend upon and have 
 *Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
-distribution of the node conditional on its parents. Based on this, we will construct a *overall risk score* which is composed of the data offered by the borrower/ any externally accesibile data sources, along with its relation with other borrowers. I.e.,
+distribution of the node conditional on its parents. Based on this, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the Bayesian network inference model based on its relation with other borrowers (**Systemic Risk**).
 
 
 
