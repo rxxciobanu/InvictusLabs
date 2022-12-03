@@ -64,9 +64,14 @@ In other words, one can answer questions about the probability of the default of
 In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
 
-We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. As an example, imagine you have Alameda who took out a huge loan from FTX - hence, entity 'Alameda' and 'FTX' will be connected by edge 'TookLoan'. Also, another borrower may have exposure relation (i.e. 'ExposureTo') to another entity, which may influence his ability to pay back their loan. In other words, not all relationships matter equallyin terms of importance. What influence their importance is the impact on a risk metric.
+We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. 
+Rather than spanning out a very large number of edges, we need to abstract out of them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, not all relationships matter equallyin terms of importance. What influence their importance is the impact on a risk metric.
 
-In order to quantify the relationships in terms of risk, one will make use of a Bayesian network.
+
+As an example, imagine there is a borrower A who is connected to FTX who gave out a huge loan to Alameda - hence, entity A is connected to 'FTX' by a relation, while 'Alameda' and 'FTX' will be connected by another relation.
+
+
+Hence, this dependency may influence borrower A's ability to pay back his loan.  The most important thing is to measure the relations between entities, and how this affects the risk metric, we will make use of a Bayesian network.
 
 *Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
