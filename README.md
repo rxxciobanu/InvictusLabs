@@ -39,8 +39,9 @@ What kind of data we use and how do we structure it?
 - **On-chain data** module: use (wallet) transaction data on DeXes, metrics from wallet addresses
 - **Off-chain data** module: use balance sheets, margin/leverage history, equity/liquidity,  business registration details, historical business data, payment history and collections, public fillings, etc.
 
-- **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert, along with a text-to-entity approach, by applying a bi-directional LSTM model for capturing entities and relationships from unstructured text data.
+- **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert, along with a text-to-entity machine learning approach, by  capturing entities and relationships from unstructured text data.
 
+*What if the borrower does not offer much off-chain data?* In this case, the borrower will receive a high credit risk, and will not be incentivized to take an under-collateralized loan. Also, our real-time **Alert System** makes use of existing API at news companies
 
 ### Copula model (our benchmark) ###
 
@@ -60,8 +61,9 @@ In other words, one can answer questions about the probability of the default of
 
 
 In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
+For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
 
-In order to do that, we need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. As an example, imagine you have Alameda who took out a huge loan from FTX - hence, entity 'Alameda' and 'FTX' will be connected by edge 'TookLoan'. In other words, not all relationships matter in terms of importance. What influence their importance is the impact on a risk metric.
+We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. As an example, imagine you have Alameda who took out a huge loan from FTX - hence, entity 'Alameda' and 'FTX' will be connected by edge 'TookLoan'. In other words, not all relationships matter in terms of importance. What influence their importance is the impact on a risk metric.
 
 In order to quantify the relationships in terms of risk, one will make use of a Bayesian network.
 
@@ -71,16 +73,16 @@ node probability tables (NPTs). Each node in a DAG has a node probability table 
 distribution of the node conditional on its parents.
 
 
-In order to build the model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
 
 
 
-For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by using a bidirectional LSTM to identify entities and relationships. 
 
-*If the borrower does not offer much information, or there is a lack in
+
+
+
 ## Risk assesment methodology ##
 
-For every borrower, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the Bayesian network inference model based on its relation with other borrowers (**Systemic Credit Risk**). See below:
+For every borrower, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the knowledge graph inference model based on its relation with other borrowers (**Systemic Credit Risk**). See below:
 
 *Individual Credit Risk* - i.e., risk of default of a borrower considered as a **stand-alone entity**.  It is obtained via assesing the risk of default obtained from training a model based on the data provided via the *Data Aggregator Engine*.
 
