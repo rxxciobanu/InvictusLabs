@@ -17,13 +17,15 @@ For example, we can answer questions such as how the risk of a malicious borrowe
 
 - building trust and transparency in the lending pool, ensuring more liquidity will be deployed as a consequence
 - more borrowers will be incentivised to take undercollateralized loans due to available liquidity,  and less interest paid
+- borrowers who do not disclose information about their status or financial statements will receive a high risk rating
+- real time event-driven alert system that will update the risk ratings 
 ## Methods ##
 * Copula model (our benchmark)
 * Stand-alone model (also known as Borrower model)
 * Graph-based model (also known as Borrower-to-Borrower model)
 
 ## Architecture ##
-![image-description](assets/borrow_to_borrow.png)
+![image-description](assets/borrow_to_borrow_alert.png)
 
 
 
@@ -75,7 +77,7 @@ In order to build the model, the **Data Aggregator Engine** will fetch as input 
 
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by using a bidirectional LSTM to identify entities and relationships. 
 
-
+*If the borrower does not offer much information, or there is a lack in
 ## Risk assesment methodology ##
 
 For every borrower, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the Bayesian network inference model based on its relation with other borrowers (**Systemic Credit Risk**). See below:
