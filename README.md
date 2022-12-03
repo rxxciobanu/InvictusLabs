@@ -68,15 +68,15 @@ In light of crypto recent events, borrower activities both depend upon and have 
 
 In other words, one can answer questions about the probability of the default of a borrower A based on having exposure or a transitive relationship to borrower B.  
 
-As an example, in lights of recent events, imagine there is a borrower A who is connected to B who gave out a huge loan to C - hence, entity A is connected to B by a relation, while B and C will be connected by another relation. Hence, this dependency may influence borrower A's ability to pay back his loan. 
+As an example, imagine there is a borrower A who is connected to B who gave out a huge loan to C - hence, entity A is connected to B by a relation, while B and C will be connected by another relation. Hence, this dependency may influence borrower A's ability to pay back his loan. 
 
 In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
 
 We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. 
-Rather than spanning out a very large number of edges, we need to abstract out of them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, not all relationships matter equallyin terms of importance. 
+Rather than spanning out a very large number of edges, we need to abstract out of them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, not all relationships matter equally in terms of importance. 
 
-The most important thing is to measure the relations between entities, and how this affects the risk metric, we will make use of a Bayesian network.
+The most important thing is to measure the relations between entities, and how this affects the risk metric. We will make use of a Bayesian network.
 
 *Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
