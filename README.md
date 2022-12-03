@@ -14,6 +14,9 @@ In order to mitigate risk, there exist two well known techniques:
 
 ## Value added (AAVE) ##
 For example, we can answer questions such as how the risk of a malicious borrower could ‘’intoxicate’’ others, via ripple effects.
+
+- building trust and transparency in the lending pool, ensuring more liquidity will be deployed as a consequence
+- more borrowers will be incentivised to take undercollateralized loans due to available liquidity,  and less interest paid
 ## Methods ##
 * Copula model (our benchmark)
 * Stand-alone model (also known as Borrower model)
@@ -50,6 +53,8 @@ A stand-alone model is a neural network model trained on the data structured in 
 ### Borrower-to-Borrower model ###
 In light of crypto recent events, borrower activities both depend upon and have consequences on the DeFi/Web3 ecosystem. *Bayesian networks* are able to synthesize different kinds of knowledge and explicitly account for the probabilities of different scenarios, therefore offering a very useful tool for risk assesment. 
 
+In other words, one can answer questions about the probability of the default of a borrower A based on having exposure or a transitive relationship to borrower B.  
+
 *Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
@@ -58,7 +63,6 @@ distribution of the node conditional on its parents.
 
 In order to build the model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
 
-In order to obtain a causal model, we will simulate the effect of interventions, actions, 
 
 
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by using a bidirectional LSTM to identify entities and relationships. 
@@ -77,7 +81,7 @@ The **Overall risk score** of a borrower is a weighted average between *Individu
 
 
 ## Allocation Engine ##
-The **Allocation Engine** constructs a diversified "portfolio" of borrowers allocated to specific pools such that the overall lending pool risk is minimized and also exists required liquidity. 
+The **Allocation Engine** constructs a diversified "portfolio" of borrowers allocated to specific pools given different constraints, such as the overall lending pool risk is minimized, available liquidity exists, etc. 
 
 
 
