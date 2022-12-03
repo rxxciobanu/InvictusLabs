@@ -15,12 +15,12 @@ In order to mitigate risk, there exist two well known techniques:
 ## Value added (AAVE) ##
 For example, we can answer questions such as how the risk of a malicious borrower could ‘’intoxicate’’ others, via ripple effects.
 ## Methods ##
-* Copula model
+* Copula model (our benchmark)
 * Stand-alone model (also known as Borrower model)
 * Graph-based model (also known as Borrower-to-Borrower model)
 
 ## Architecture (need to redo it) ##
-![image-description](assets/Invictus_Labs_overview_arch_1.png)
+![image-description](assets/borrow_to_borrow.png)
 
 
 
@@ -37,7 +37,7 @@ What kind of data we use and how do we structure it?
 - **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert, along with a text-to-entity approach, by applying a bi-directional LSTM model for capturing entities and relationships from unstructured text data.
 
 
-### Copula model ###
+### Copula model (our benchmark) ###
 
 A copula model is a type of mathematical model that is used to describe the dependence between different sources of risk. In the context of credit risk, a copula model can be used to understand the relationship between the likelihood of a borrower defaulting on a loan and the potential impact of that default on the lender or other borrowers.
 
