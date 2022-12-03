@@ -41,6 +41,7 @@ What kind of data we use and how do we structure it?
 
 - **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert, along with a text-to-entity machine learning approach, by  capturing entities and relationships from unstructured text data.
 
+*What if the borrower does not offer much off-chain data?* In this case, the borrower will receive a high credit risk, and will not be incentivized to take an under-collateralized loan. We will also make use of existing APIs that track unstructured text data, such as from Twitter, Discord, etc. to acquire as much data as possible. Also, our real-time **Alert System** makes use of existing API market services (such as Bloomberg, Moonpass, Nansen) to track whether a specific event/news will increase/decrease its risk of default.
 **What if the borrower does not offer sufficient off-chain data?**<br /> 
 For this situation, we have economic incentive mechanisms in place to reward the borrower for data sharing. That is, lack of shared information will lead to a higher credit risk rating, which will determine the system to make a poor interest rate offering. Furthermore, our real-time **Alert System** makes use of existing APIs of news companies to derive the risk level from the captured borrower's behaviour.
 
@@ -64,7 +65,7 @@ In other words, one can answer questions about the probability of the default of
 In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
 
-We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. As an example, imagine you have Alameda who took out a huge loan from FTX - hence, entity 'Alameda' and 'FTX' will be connected by edge 'TookLoan'. In other words, not all relationships matter in terms of importance. What influence their importance is the impact on a risk metric.
+We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. As an example, imagine you have Alameda who took out a huge loan from FTX - hence, entity 'Alameda' and 'FTX' will be connected by edge 'TookLoan'. Also, another borrower may have exposure relation (i.e. 'ExposureTo') to another entity, which may influence his ability to pay back their loan. In other words, not all relationships matter equallyin terms of importance. What influence their importance is the impact on a risk metric.
 
 In order to quantify the relationships in terms of risk, one will make use of a Bayesian network.
 
@@ -73,7 +74,7 @@ dependencies between a set of variables using a directed acyclic graph (DAG) and
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
 distribution of the node conditional on its parents.
 
-
+Then, based on the specific factors, such as exposure, loans, team being implied into a bad activity, etc, we will update the risk impact on the knowledge graph edges. 
 
 
 
