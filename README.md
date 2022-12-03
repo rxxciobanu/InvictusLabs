@@ -51,9 +51,17 @@ A stand-alone model is a neural network model trained on the data structured in 
 
 
 ### Borrower-to-Borrower model ###
-In light of crypto recent events, borrower activities both depend upon and have consequences on the DeFi/Web3 ecosystem. *Bayesian networks* are able to synthesize different kinds of knowledge and explicitly account for the probabilities of different scenarios, therefore offering a very useful tool for risk assesment. 
+In light of crypto recent events, borrower activities both depend upon and have consequences on the DeFi/Web3 ecosystem. *Knowledge graphs* are able to synthesize different kinds of knowledge and explicitly account for the probabilities of different scenarios, therefore offering a very useful tool for risk assesment. 
 
 In other words, one can answer questions about the probability of the default of a borrower A based on having exposure or a transitive relationship to borrower B.  
+
+
+
+In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
+
+In order to do that, we need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. As an example, imagine you have Alameda who took out a huge loan from FTX - hence, entity 'Alameda' and 'FTX' will be connected by edge 'TookLoan'. In other words, not all relationships matter in terms of importance. What influence their importance is the impact on a risk metric.
+
+In order to quantify the relationships in terms of risk, one will make use of a Bayesian network.
 
 *Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
