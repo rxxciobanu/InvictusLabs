@@ -86,9 +86,9 @@ Then, based on the specific factors, such as exposure, loans, team being implied
 
 For every borrower, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the knowledge graph inference model based on its relation with other borrowers (**Systemic Credit Risk**). See below:
 
-*Individual Credit Risk* - i.e., risk of default of a borrower considered as a **stand-alone entity**.  It is obtained via assesing the risk of default obtained from training a model based on the data provided via the *Data Aggregator Engine*.
+*Individual Credit Risk* - i.e., risk of default of a borrower considered as a **stand-alone entity**.  It is obtained via assesing the risk of default obtained from the Borrower model (based on the data provided via the *Data Aggregator Engine*).
 
-*Systemic Credit Risk* - obtained from the output of the Bayesian network, which will determine what is the risk of default if being exposed to another borrowers or external entities.
+*Systemic Credit Risk* - obtained from the output of the Borrower-to-borrower model, which will determine what is the risk of default if being exposed to another borrowers or external entities.
 
 The **Overall risk score** of a borrower is a weighted average between *Individual Credit Risk* and *Systemic Credit Risk*, with the exact weights to be determined via experiments, or as a dynamic weighting mechanism, based on market regime. 
 
