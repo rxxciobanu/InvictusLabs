@@ -72,7 +72,7 @@ dependencies between a set of variables using a directed acyclic graph (DAG) and
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
 distribution of the node conditional on its parents.
 
-
+Then, based on the specific factors, such as exposure, loans, team being implied into a bad activity, etc, we will update the risk impact on the knowledge graph edges. 
 
 
 
