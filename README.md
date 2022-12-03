@@ -12,13 +12,22 @@ In order to mitigate risk, there exist two well known techniques:
 - quantitative - a mathematical model is used, allowing for more elaborate analysis.
 
 
-## Value added (AAVE) ##
-For example, we can answer questions such as how the risk of a malicious borrower could ‘’intoxicate’’ others, via ripple effects.
+## Value added to Aave ##
+In light of recent events, we’ve seen that the DeFi space is opaque and gated, pushing investors away. The whole ecosystem is hurting from this, including Aave. Through the proposed approach, we strive to help Aave become the leader of both over-collateralized and under-collateralized lending by:
 
-- building trust and transparency in the lending pool, ensuring more liquidity will be deployed as a consequence
-- more borrowers will be incentivised to take undercollateralized loans due to available liquidity,  and less interest paid
-- borrowers who do not disclose information about their status or financial statements will receive a high risk rating
-- real time event-driven alert system that will update the risk ratings 
+- Bringing into Aave the already existing on-chain Institutional Borrowers while also forming new relationships with off-chain Institutions looking to borrow. Invictus Labs will focus exclusively on Institutional customers as we believe them to be the key to unlocking new levels of DeFi liquidity.
+- Bringing trust and transparency to the future Aave under-collateralized Liquidity Pools by measuring Systemic Risk through our systems. This means that we will be able to answer questions such as how the risk of a malicious borrower could "intoxicate" others, via ripple effects.
+- Vastly increased TVL as a consequence of the new type of borrowers (Trusted Institutions) brought into the ecosystem and the Risk Assessment presented in the sections to follow.
+- Real-time event-driven Alert-System that will keep track of the risk assumed by Aave lenders and allow for more sustainable and stats-drive decisions.
+
+## Proposed Aave Integration ##
+In the past few weeks, we've had discussions with different Aave members, including AaveCompanies, to figure out which is the best integration to bring as much value to Aave as fast as possible.
+Those discussions conclude with the following proposal:
+
+- The final stages of the integrations will be represented by our system acting as an approved Facilitator for the under-collateralized bucket of the $GHO proposal and will derive value through the creation of stable lending liquidity pools curated through our novel risk assessor.
+- To get there, we need to gain the trust of the Aave DAO. We plan on doing that by contributing to the DAO with analyses on different lends executed on Aave and how this will impact the ecosystem as a whole. This value will be offered from the beginning, as soon as our MVP is live. Our team is working on that as we speak.
+- We are also considering working on getting whitelisted for the Aave Arc Pool, to start the under-collateralised process in a more gated environment, before moving on to the final stages with $GHO.
+
 ## Methods ##
 * Copula model (our benchmark)
 * Stand-alone model (also known as Borrower model)
