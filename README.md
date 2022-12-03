@@ -2,7 +2,7 @@
 ![image-description](assets/logo_transparent.png)
 ## Description ##
 
-The scope of this project is to construct a platform for measuring the credit risk of DeFi (lending) pools, by modelling the relationships between entities that partake in borrowing through causal inference and machine learning techniques. 
+The scope of Invictus Labs is to construct a platform for measuring the credit risk of DeFi (lending) pools. We achieve that by modelling the relationships between entities that partake in borrowing through causal inference and machine learning techniques. 
 
 Sophisticated financial institutions in TradFi model various types of risks, such as credit, counterparty, market, political, country risks. 
 
@@ -41,7 +41,8 @@ What kind of data we use and how do we structure it?
 
 - **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert, along with a text-to-entity machine learning approach, by  capturing entities and relationships from unstructured text data.
 
-*What if the borrower does not offer much off-chain data?* In this case, the borrower will receive a high credit risk, and will not be incentivized to take an under-collateralized loan. Also, our real-time **Alert System** makes use of existing API at news companies
+**What if the borrower does not offer sufficient off-chain data?**<br /> 
+For this situation, we have economic incentive mechanisms in place to reward the borrower for data sharing. That is, lack of shared information will lead to a higher credit risk rating, which will determine the system to make a poor interest rate offering. Furthermore, our real-time **Alert System** makes use of existing APIs of news companies to derive the risk level from the captured borrower's behaviour.
 
 ### Copula model (our benchmark) ###
 
