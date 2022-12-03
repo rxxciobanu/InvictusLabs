@@ -68,7 +68,7 @@ In light of crypto recent events, borrower activities both depend upon and have 
 
 In other words, one can answer questions about the probability of the default of a borrower A based on having exposure or a transitive relationship to borrower B.  
 
-As an example, in lights of recent events, imagine there is a borrower A who is connected to FTX who gave out a huge loan to Alameda - hence, entity A is connected to 'FTX' by a relation, while 'Alameda' and 'FTX' will be connected by another relation. Hence, this dependency may influence borrower A's ability to pay back his loan. 
+As an example, in lights of recent events, imagine there is a borrower A who is connected to B who gave out a huge loan to C - hence, entity A is connected to B by a relation, while B and C will be connected by another relation. Hence, this dependency may influence borrower A's ability to pay back his loan. 
 
 In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
