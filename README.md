@@ -19,7 +19,7 @@ For example, we can answer questions such as how the risk of a malicious borrowe
 * Stand-alone model (also known as Borrower model)
 * Graph-based model (also known as Borrower-to-Borrower model)
 
-## Architecture (need to redo it) ##
+## Architecture ##
 ![image-description](assets/borrow_to_borrow.png)
 
 
