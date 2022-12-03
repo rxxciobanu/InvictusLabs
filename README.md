@@ -65,10 +65,7 @@ In order to build the graph model, the **Data Aggregator Engine** will fetch as 
 For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
 
 We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. 
-Rather than spanning out a very large number of edges, we need to abstract out of them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, not all relationships matter equallyin terms of importance. What influence their importance is the impact on a risk metric.
-
-
-
+Rather than spanning out a very large number of edges, we need to abstract out of them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, not all relationships matter equallyin terms of importance. 
 
 The most important thing is to measure the relations between entities, and how this affects the risk metric, we will make use of a Bayesian network.
 
