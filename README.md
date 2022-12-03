@@ -71,15 +71,15 @@ In other words, one can answer questions about the probability of the default of
 
 As an example, imagine there is a borrower A who is connected to B who gave out a huge loan to C - hence, entity A is connected to B by a relation, while B and C will be connected by another relation. Hence, this dependency may influence borrower A's ability to pay back his loan. 
 
-In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, offering as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
-For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert and a text-to-entity approach, by identifying entities and relationships. 
+In order to build the graph model, the **Data Aggregator Engine** will fetch as input what *On-chain* and *Off-Chain* data modules offer, giving as output a tuple under the form *(Entity, Relationship, Entity)*. The on-chain data is more structured, by connecting wallets/pools as entities  and transactions (with their corresponding numerical values) as relationships.
+For the off-chain data (such as reports, balance sheets, etc), we will make use of both a domain expert mathematical model and a text-to-entity approach, by identifying entities and relationships. 
 
-We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is on another entity. 
-Rather than spanning out a very large number of edges, we need to abstract out of them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, not all relationships matter equally in terms of importance. 
+We need to quantify the relationships between entities. Hence, every edge in the knowledge graph will have a numerical value that will tell how dependent an entity is to another entity. 
+Rather than spanning out a very large number of edges, we need to abstract out from them, by combining multiple relations that an entity A may have with entity B into a single one, with a corresponding risk impact. In other words, **not all relationships matter equally in terms of importance.** 
 
-The most important thing is to measure the relations between entities, and how this affects the risk metric. We will make use of a Bayesian network.
+**The most important thing is to measure the relations between entities, and how this affects the risk metric. We will make use of a Bayesian network to achieve that.**
 
-*Bayesian networks* (causal inference models) are a type of probabilistic graphical model that explicitly describe
+**Bayesian networks** (causal inference models) are a type of probabilistic graphical model that explicitly describe
 dependencies between a set of variables using a directed acyclic graph (DAG) and a set of
 node probability tables (NPTs). Each node in a DAG has a node probability table (NPT) which describes the probability
 distribution of the node conditional on its parents.
@@ -94,11 +94,11 @@ Then, based on the specific factors, such as exposure, loans, team being implied
 
 ## Risk assesment methodology ##
 
-For every borrower, we will construct a **Overall risk score** which is composed of the output of model trained on the data offered by the borrower/ any externally accesibile data sources (**Individual credit risk**), along with the output of the knowledge graph inference model based on its relation with other borrowers (**Systemic Credit Risk**). See below:
+For every borrower, we will construct a **Overall Risk Score** which is composed of the output of the model trained on the data offered by the borrower/ any externally accessibile data sources (**Individual credit risk**), along with the output of the knowledge graph inference model based on its relation with other borrowers (**Systemic Credit Risk**). See below:
 
-*Individual Credit Risk* - i.e., risk of default of a borrower considered as a **stand-alone entity**.  It is obtained via assesing the risk of default obtained from the Borrower model (based on the data provided via the *Data Aggregator Engine*).
+**Individual Credit Risk** - i.e., risk of default of a borrower considered as a **stand-alone entity**.  It is obtained via assessing the risk of default obtained from the Borrower model (based on the data provided via the *Data Aggregator Engine*).
 
-*Systemic Credit Risk* - obtained from the output of the Borrower-to-borrower model, which will determine what is the risk of default if being exposed to another borrowers or external entities.
+**Systemic Credit Risk** - obtained from the output of the Borrower-to-Borrower model, which will determine what is the risk of default if existing exposure to another borrower or external entities.
 
 The **Overall risk score** of a borrower is a weighted average between *Individual Credit Risk* and *Systemic Credit Risk*, with the exact weights to be determined via experiments, or as a dynamic weighting mechanism, based on market regime. 
 
