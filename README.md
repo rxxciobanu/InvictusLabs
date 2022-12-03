@@ -1,5 +1,5 @@
 # Invictus Labs
-
+![image-description](assets/logo_transparent.png)
 ## Description ##
 
 The scope of this project is to construct a platform for measuring the credit risk of DeFi (lending) pools, by modelling the relationships between entities that partake in borrowing through causal inference and machine learning techniques. 
