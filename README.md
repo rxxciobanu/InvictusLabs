@@ -94,7 +94,7 @@ The **Overall risk score** of a borrower is a weighted average between *Individu
 
 
 ## Allocation Engine ##
-The **Allocation Engine** constructs a diversified "portfolio" of borrowers allocated to specific pools given different constraints, such as the overall lending pool risk is minimized, available liquidity exists, etc. 
+The **Allocation Engine** constructs a diversified "portfolio" of borrowers allocated to specific pools given different constraints, such as the overall lending pool risk is minimized, available liquidity exists, etc. We will make use of state of the art portfolio allocation algorithms from Hudson and Thames to speed up the allocation process.
 
 
 
