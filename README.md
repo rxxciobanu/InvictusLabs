@@ -28,7 +28,7 @@ Those discussions conclude with the following proposal:
 - To get there, we need to gain the trust of the Aave DAO. We plan on doing that by contributing to the DAO with analyses on different lends executed on various Aave Pools and how this will impact the ecosystem as a whole. This alpha will be offered from the beginning, as soon as our MVP is live. Our team is working on that as we speak.
 - We are also considering working on getting whitelisted for the Aave Arc Pool, to start the under-collateralised lending process in a more gated environment, before moving on to the final stages with $GHO.
 
-## Methods ##
+## 3 Point Methodology for Risk Assessment ##
 * Copula model (our benchmark)
 * Stand-alone model (also known as Borrower model)
 * Graph-based model (also known as Borrower-to-Borrower model)
@@ -41,26 +41,27 @@ Those discussions conclude with the following proposal:
 
 ### Data ###
 
-What kind of data we use and how do we structure it?
+What kind of data do we use and how do we structure it?
 
 
 
-- **On-chain data** module: use (wallet) transaction data on DeXes, metrics from wallet addresses
-- **Off-chain data** module: use balance sheets, margin/leverage history, equity/liquidity,  business registration details, historical business data, payment history and collections, public fillings, etc.
+- **On-chain data** module: uses (wallet) transaction data on DeXes and metrics from wallet addresses
+- **Off-chain data** module: uses balance sheets, margin/leverage history, equity/liquidity,  business registration details, historical business data, payment history and collections, public fillings, etc. Furthermore, we are testing a novel way of tokenisation of future borrower income. This will create the possibility of utilising the tokenised predicted-income as collateral.
 
-- **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert, along with a text-to-entity machine learning approach, by  capturing entities and relationships from unstructured text data.
+- **Data aggregator engine**: will combine the previous 2 modules, and will output structured *entities* and *relationships* between entities. We will use a domain-expert mathematical model, along with a text-to-entity machine learning approach, by  capturing entities and relationships from unstructured text data.
 
 **What if the borrower does not offer sufficient off-chain data?**<br />
-For this situation, we have economic incentive mechanisms in place to reward the borrower for data sharing. That is, lack of shared information will lead to a higher credit risk rating, which will determine the system to make a poor interest rate offering. Furthermore, we will also make use of existing APIs that track unstructured text data, such as from Twitter, Discord, etc. to derive the risk level from the captured borrower's behaviour. Lastly, our real-time **Alert System** makes use of existing API market services (such as Bloomberg, Moonpass, Nansen) to track whether a specific event/news will increase/decrease the borrower's risk of default.
 
-### Copula model (our benchmark) ###
+For this situation, we have economic incentive mechanisms in place to reward the borrower for data sharing. That is, lack of shared information will lead to a higher risk rating, which will determine the system to make a high interest rate offering. Furthermore, we will also make use of existing APIs that track unstructured text data, such as from Twitter, Discord, etc. to derive the risk level from the captured borrower's behaviour. Lastly, our real-time **Alert System** makes use of existing API market services (such as Bloomberg, Moonpass, Nansen) to track whether a specific event/news will increase/decrease the borrower's risk of default.
 
-A copula model is a type of mathematical model that is used to describe the dependence between different sources of risk. In the context of credit risk, a copula model can be used to understand the relationship between the likelihood of a borrower defaulting on a loan and the potential impact of that default on the lender or other borrowers.
+### Our Benchmark: Copula model ###
 
-The model consists of two components: a *marginal* model, which describes the distribution of the individual sources of risk, and a *copula* function, which describes the dependence between those sources of risk. The marginal model can be specified using a variety of different parametric forms, such as the logistic or normal distributions, while the copula function can be specified using a variety of different parametric forms, such as the Gaussian or Clayton copulas. 
+A copula model is a type of mathematical model that is used to describe the dependence between different sources of risk. In the context of credit risk, a copula model can be used to understand the relationship between the likelihood of a borrower defaulting on a loan and the potential impact of that default on the lender, or other borrowers.
+
+The model consists of two components: a *marginal* model, which describes the distribution of the individual sources of risk, and a *copula* function, which describes the dependence between those sources of risk. The marginal model can be specified using a variety of different parametric forms, such as the logistic or normal distributions, while the copula function can also be specified using parametric forms such as the Gaussian or Clayton copulas. 
 
 ### Borrower model ###
-A stand-alone model is a neural network model trained on the data structured in the **Data Aggregator Engine**, outputting the credit risk of default for a borrower, without taking into account any other systemic risk created by other players in the field. This is used to calculate the **Individual credit risk** (see below). 
+The stand-alone borrower model is a neural network model trained on the data structured in the **Data Aggregator Engine**, outputting the credit risk of default for a borrower, without taking into account any other systemic risk created by other players in the field. This is used to calculate the **Individual credit risk** (see below). 
 
 
 ### Borrower-to-Borrower model ###
