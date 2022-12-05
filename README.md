@@ -11,6 +11,11 @@ In order to mitigate risk, there exist two well known techniques:
 - qualitative - methods that do not require a model. Here, the risk is assesed using mostly expert-driven techniques.
 - quantitative - mathematical models are used, allowing for more elaborate analysis.
 
+The end goal is to measure the risk of default of any borrower as a function of his interaction with all the other borrowers he may have been exposed to. This means that we not only take into account data about the borrower as a standalone entity but also the ripple effects of the actions of all the other entities from the DeFi ecosystem.
+To achieve this, we are constructing a quantitative engine made of 2 Models (Borrower and Borrower-to-Borrower), through which we create an Overall Credit Risk. The Borrower model will output the individual's credit risk, whereas the Borrower-to-Borrower model measures the systemic risk the borrower is exposed to.
+Furthermore, the Borrower-to-Borrower is constructed via a topological network of borrowers and entities, along with measuring the relationships between them. The entities and relationships are obtained using a domain-expert mathematical model combined with a text-to-entity approach, in which key phrases and topics from the unstructured text are mapped into graph nodes and edges.
+We use both on-chain and off-chain data froms borrowers, along with a real-time alert system to update the risk indicators. Finally, our product allocates borrowers into trenched lending pools to ensure that the risk of default of the lending pool as a whole is minimized, while also ensuring that liquidity is available.
+
 
 ## Value added to Aave ##
 In light of recent events, we’ve seen that the DeFi space is opaque and gated, pushing investors away. The whole ecosystem is hurting from this, including Aave. Through the proposed approach, we strive to help Aave become the leader of both over-collateralized and under-collateralized lending by:
