@@ -18,6 +18,10 @@ To achieve this, we are constructing a quantitative engine made of 2 Models (Bor
 Furthermore, the Borrower-to-Borrower is constructed via a topological network of borrowers and entities, along with measuring the relationships between them. The entities and relationships are obtained using a domain-expert mathematical model combined with a text-to-entity approach, in which key phrases and topics from the unstructured text are mapped into graph nodes and edges.
 We use both on-chain and off-chain data froms borrowers, along with a real-time alert system to update the risk indicators. Finally, our product allocates borrowers into trenched lending pools to ensure that the risk of default of the lending pool as a whole is minimized, while also ensuring that liquidity is available.
 
+## Team ##
+**Radu Ciobanu** (https://www.linkedin.com/in/radu-ciobanu-77aa50177/) has a PhD in Computer Science from University of Edinburgh, did research on graph theory, probabilistic systems and machine learning, worked as a quantitative researcher and former startup CTO of a machine learning for risk management startup (Predictnow.ai - [https://predictnow.ai/](https://predictnow.ai/))
+
+**Flavius Mardare** (https://www.linkedin.com/in/flaviusmardare/) is a Computer Science Grad from University of Birmingham. He’s been an algorithmic trader for a number of years, has experience as Start-up Tech Lead and is a previous founder of a Mindfulness Meditation company that grew to 15k users upon selling.
 
 ## Value added to Aave ##
 In light of recent events, we’ve seen that the DeFi space is opaque and gated, pushing investors away. The whole ecosystem is hurting from this, including Aave. Through the proposed approach, we strive to help Aave become the leader of both over-collateralized and under-collateralized lending by:
