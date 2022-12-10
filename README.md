@@ -21,7 +21,7 @@ We use both on-chain and off-chain data froms borrowers, along with a real-time 
 ## Team ##
 **Radu Ciobanu** (https://www.linkedin.com/in/radu-ciobanu-77aa50177/) has a PhD in Computer Science from University of Edinburgh, did research on graph theory, probabilistic systems and machine learning, worked as a quantitative researcher and former startup CTO of a machine learning for risk management startup (Predictnow.ai - [https://predictnow.ai/](https://predictnow.ai/))
 
-**Flavius Mardare** (https://www.linkedin.com/in/flaviusmardare/) is a Computer Science Grad from University of Birmingham. He’s been an algorithmic trader for a number of years, has experience as Start-up Tech Lead and is a previous founder of a Mindfulness Meditation company that grew to 15k users upon selling.
+**Flavius Mardare** (https://www.linkedin.com/in/flaviusmardare/) is a Computer Science Grad from University of Birmingham, that’s been in the DeFi space for 5 years. Has grown engineering teams through his past role as a Startup Tech Lead while also having done business deals as a previous founder. 
 
 ## Value added to Aave ##
 In light of recent events, we’ve seen that the DeFi space is opaque and gated, pushing investors away. The whole ecosystem is hurting from this, including Aave. Through the proposed approach, we strive to help Aave become the leader of both over-collateralized and under-collateralized lending by:
