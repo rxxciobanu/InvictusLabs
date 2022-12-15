@@ -39,6 +39,17 @@ Those discussions conclude with the following proposal:
 - To get there, we need to gain the trust of the Aave DAO. We plan on doing that by contributing to the DAO with analyses on different lends executed on various Aave Pools and how this will impact the ecosystem as a whole. This alpha will be offered from the beginning, as soon as our MVP is live. Our team is working on that as we speak.
 - We are also considering working on getting whitelisted for the Aave Arc Pool, to start the under-collateralised lending process in a more gated environment, before moving on to the final stages with $GHO.
 
+## Further Clarifications ##
+The MVP will be a dashboard that the AaveDAO will have complete access to. This dashboard will allow the AaveDAO to check the health (risk metric) of an under-collateralised lending pool using the Systemic Risk algorithm outlined in the Grant Description. Furthermore, the Visualiser component of the dashboard will offer explainability into the measured risk. 
+
+Now, the main question is how we will assess the health of these pools. To answer that, we will measure two things:
+
+1. The probability of default for each individual borrower in the pool.
+2. How other entities that these borrowers interact with can negatively impact the financial health of the initial borrowers (those in the Aave pools).
+
+In summary, if our systems had been live a year ago, we claim they would have been able to detect, for example, how the simple loan that Gemini gave to Genesis (an apparently healthy institution) would eventually cause that loan to default, as Genesis was involved in other, riskier ventures.
+Systems like these are the standard in making TradFi institutional loans sustainable, but they have not yet been implemented in DeFi.
+
 ## 3 Point Methodology for Risk Assessment ##
 * Copula model (our benchmark)
 * Stand-alone model (also known as Borrower model)
