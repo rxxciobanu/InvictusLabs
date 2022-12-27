@@ -19,9 +19,15 @@ Furthermore, the Borrower-to-Borrower is constructed via a topological network o
 We use both on-chain and off-chain data froms borrowers, along with a real-time alert system to update the risk indicators. Finally, our product allocates borrowers into trenched lending pools to ensure that the risk of default of the lending pool as a whole is minimized, while also ensuring that liquidity is available.
 
 ## Team ##
-**Radu Ciobanu** (https://www.linkedin.com/in/radu-ciobanu-77aa50177/) has a PhD in Computer Science from University of Edinburgh, did research on graph theory, probabilistic systems and machine learning, worked as a quantitative researcher and former startup CTO of a machine learning for risk management startup (Predictnow.ai - [https://predictnow.ai/](https://predictnow.ai/))
+**Radu Ciobanu, PhD** (https://www.linkedin.com/in/radu-ciobanu-77aa50177/) has a PhD in Computer Science from University of Edinburgh, did research on graph theory, probabilistic systems and machine learning, worked as a quantitative researcher and former startup CTO of a machine learning for risk management startup (Predictnow.ai - [https://predictnow.ai/](https://predictnow.ai/))
 
 **Flavius Mardare** (https://www.linkedin.com/in/flaviusmardare/) is a Computer Science Grad from University of Birmingham, that’s been in the DeFi space for 5 years. Has grown engineering teams through his past role as a Startup Tech Lead while also having done business deals as a previous founder. 
+
+**Dan Costinescu, PhD** (https://www.linkedin.com/in/dan-n-costinescu-58baa7a/) Financial Advisor @ Invictus Labs & Portfolio Manager @ Andurand Capital
+
+**Roxana Danila** (https://www.linkedin.com/in/roxdanila/) Risk Assessment Advisor @ Invictus Labs & CTO @ Nexus Mutual
+
+**Pandelis Zembashis** (https://www.linkedin.com/in/pandelis/) Technical Advisor @ Invictus Labs & Tech Lead @ Papaya
 
 ## Value added to Aave ##
 In light of recent events, we’ve seen that the DeFi space is opaque and gated, pushing investors away. The whole ecosystem is hurting from this, including Aave. Through the proposed approach, we strive to help Aave become the leader of both over-collateralized and under-collateralized lending by:
